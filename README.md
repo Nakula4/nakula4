@@ -1,3 +1,3 @@
 <div align="center">
-  <img src="solo-leveling-card.svg" alt="Solo Leveling Status Window" />
+  <img src="my-card.svg" alt="Status Window" />
 </div>
