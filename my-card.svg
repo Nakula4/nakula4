@@ -148,7 +148,7 @@
     <text y="135" class="stat text-cyan">
       <tspan x="210">NAME</tspan>
       <tspan x="330">:</tspan>
-      <tspan x="345" class="text-white">WICAKSONO</tspan>
+      <tspan x="345" class="text-white">Nakula4</tspan>
     </text>
     <text y="155" class="stat text-cyan">
       <tspan x="210">LEVEL</tspan>
@@ -168,7 +168,7 @@
     <text y="215" class="stat text-cyan">
       <tspan x="210">AFFILIATION</tspan>
       <tspan x="330">:</tspan>
-      <tspan x="345" class="text-white">INFORMATICS GUILD</tspan>
+      <tspan x="345" class="text-white">INFORMATICS</tspan>
     </text>
     <text y="235" class="stat text-cyan">
       <tspan x="210">BASE</tspan>
@@ -178,7 +178,7 @@
     <text y="255" class="stat text-cyan">
       <tspan x="210">PROJECTS</tspan>
       <tspan x="330">:</tspan>
-      <tspan x="345" class="text-white">FLUTTER APPS &amp; EXPENSE TRACKER</tspan>
+      <tspan x="345" class="text-white">FLUTTER APPS</tspan>
     </text>
 
     <!-- 5. HEALTH dan MANA BAR -->
