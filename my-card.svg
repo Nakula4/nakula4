@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="850" height="485">
+  <defs>
+    <!-- Efek Glow untuk Jendela Sistem & Mata -->
+    <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="eye-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <pattern id="pixel-grid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <rect width="15" height="15" fill="none" stroke="#004466" stroke-width="0.5" stroke-opacity="0.3" shape-rendering="crispEdges"/>
+    </pattern>
+  </defs>
+
+  <style>
+    /* Styling Dasar & Colors */
+    .bg-dark { fill: #050814; }
+    .sys-window { 
+      fill: rgba(0, 15, 30, 0.9); 
+      stroke: #00d9ff; 
+      stroke-width: 3; 
+      filter: url(#neon-glow); 
+    }
+    .sys-inner-border { 
+      stroke: #005577; 
+      fill: url(#pixel-grid); 
+      stroke-width: 1; 
+    }
+    
+    text {
+      font-family: 'Courier New', Consolas, monospace;
+      font-weight: bold;
+    }
+    .text-cyan { fill: #00d9ff; }
+    .text-white { fill: #e0f7fa; }
+    .text-purple { fill: #a45cff; filter: drop-shadow(0px 0px 3px #a45cff); }
+    .text-red { fill: #ff3366; }
+    
+    .title { font-size: 24px; letter-spacing: 2px; }
+    .stat { font-size: 14px; letter-spacing: 1px; }
+
+    .photo-frame {
+      fill: #011220;
+      stroke: #00d9ff;
+      stroke-width: 2;
+    }
+
+    /* --- ANIMASI --- */
+    .card-group { animation: hoverCard 6s ease-in-out infinite; }
+    @keyframes hoverCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .cursor { animation: blink 1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .pixel-eyes { 
+      fill: #00ffff; 
+      filter: url(#eye-glow);
+      animation: eyePulse 2s ease-in-out infinite;
+    }
+    @keyframes eyePulse {
+      0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #00ffff); }
+      50% { opacity: 0.7; filter: drop-shadow(0 0 6px #00ffff); }
+    }
+
+    .particle { animation: floatUp linear infinite; opacity: 0; }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-70px) scale(0.5); opacity: 0; }
+    }
+    .p1 { animation-duration: 2.5s; animation-delay: 0.1s; x: 90; }
+    .p2 { animation-duration: 3s; animation-delay: 0.7s; x: 170; fill: #00d9ff;}
+    .p3 { animation-duration: 2s; animation-delay: 1.3s; x: 250; fill: #2a005c;}
+    .p4 { animation-duration: 3.5s; animation-delay: 0.3s; x: 330; }
+    .p5 { animation-duration: 2.8s; animation-delay: 0.9s; x: 440; fill: #2a005c;}
+    .p6 { animation-duration: 2.2s; animation-delay: 1.5s; x: 530; fill: #00d9ff;}
+  </style>
+
+  <!-- Background Gelap Total -->
+  <rect width="100%" height="100%" class="bg-dark" />
+
+  <!-- Grup Kartu Melayang -->
+  <g class="card-group">
+    
+    <!-- 1. BORDER SISTEM UTAMA (Diperbesar) -->
+    <rect x="50" y="50" width="600" height="300" class="sys-window" shape-rendering="crispEdges" />
+    <rect x="55" y="55" width="590" height="290" class="sys-inner-border" shape-rendering="crispEdges" />
+    
+    <!-- Sudut Pixel Ornamen -->
+    <rect x="45" y="45" width="15" height="15" fill="#00d9ff" shape-rendering="crispEdges"/>
+    <rect x="640" y="45" width="15" height="15" fill="#00d9ff" shape-rendering="crispEdges"/>
+    <rect x="45" y="340" width="15" height="15" fill="#00d9ff" shape-rendering="crispEdges"/>
+    <rect x="640" y="340" width="15" height="15" fill="#00d9ff" shape-rendering="crispEdges"/>
+
+    <!-- 2. JUDUL -->
+    <text x="80" y="95" class="text-cyan title">STATUS WINDOW <tspan class="text-white cursor">_</tspan></text>
+    <rect x="80" y="105" width="540" height="2" fill="#005577" shape-rendering="crispEdges"/>
+
+    <!-- 3. BAGIAN FOTO PIXEL AVATAR (Diturunkan posisinya agar sejajar teks) -->
+    <g transform="translate(70, 130)">
+      <rect x="0" y="0" width="120" height="120" class="photo-frame" shape-rendering="crispEdges" />
+      
+      <g transform="translate(8, 8)" shape-rendering="crispEdges">
+        <rect x="0" y="0" width="104" height="104" fill="#022944" />
+        
+        <g fill="#1a0033">
+          <rect x="32" y="16" width="40" height="8" />
+          <rect x="24" y="24" width="56" height="8" />
+          <rect x="16" y="32" width="72" height="64" />
+          <rect x="24" y="96" width="56" height="8" />
+        </g>
+        
+        <g fill="#000000">
+          <rect x="32" y="32" width="40" height="40" />
+          <rect x="24" y="40" width="8" height="24" />
+          <rect x="72" y="40" width="8" height="24" />
+        </g>
+        
+        <g class="pixel-eyes">
+          <rect x="40" y="48" width="8" height="8" />
+          <rect x="56" y="48" width="8" height="8" />
+        </g>
+        
+        <g fill="#330066">
+          <rect x="16" y="40" width="8" height="16" />
+          <rect x="80" y="40" width="8" height="16" />
+          <rect x="32" y="80" width="40" height="8" />
+        </g>
+      </g>
+      <rect x="0" y="0" width="10" height="10" fill="#00d9ff" shape-rendering="crispEdges"/>
+    </g>
+
+    <!-- 4. BAGIAN TEKS STATUS (Menggunakan kordinat x absolut untuk setiap kolom) -->
+    <!-- Kolom Label di x=210, Titik Dua di x=330, Nilai di x=345 -->
+    <text y="135" class="stat text-cyan">
+      <tspan x="210">NAME</tspan>
+      <tspan x="330">:</tspan>
+      <tspan x="345" class="text-white">WICAKSONO</tspan>
+    </text>
+    <text y="155" class="stat text-cyan">
+      <tspan x="210">LEVEL</tspan>
+      <tspan x="330">:</tspan>
+      <tspan x="345" class="text-white">99</tspan>
+    </text>
+    <text y="175" class="stat text-cyan">
+      <tspan x="210">JOB</tspan>
+      <tspan x="330">:</tspan>
+      <tspan x="345" class="text-purple">SHADOW DEVELOPER</tspan>
+    </text>
+    <text y="195" class="stat text-cyan">
+      <tspan x="210">TITLE</tspan>
+      <tspan x="330">:</tspan>
+      <tspan x="345" class="text-white">ONE WHO OVERCOMES BUGS</tspan>
+    </text>
+    <text y="215" class="stat text-cyan">
+      <tspan x="210">AFFILIATION</tspan>
+      <tspan x="330">:</tspan>
+      <tspan x="345" class="text-white">INFORMATICS GUILD</tspan>
+    </text>
+    <text y="235" class="stat text-cyan">
+      <tspan x="210">BASE</tspan>
+      <tspan x="330">:</tspan>
+      <tspan x="345" class="text-white">SOUTH JAKARTA</tspan>
+    </text>
+    <text y="255" class="stat text-cyan">
+      <tspan x="210">PROJECTS</tspan>
+      <tspan x="330">:</tspan>
+      <tspan x="345" class="text-white">FLUTTER APPS &amp; EXPENSE TRACKER</tspan>
+    </text>
+
+    <!-- 5. HEALTH & MANA BAR (Diturunkan posisinya) -->
+    <!-- HP Bar -->
+    <text x="210" y="290" class="text-red stat">HP</text>
+    <rect x="240" y="280" width="160" height="12" fill="#330011" shape-rendering="crispEdges"/>
+    <rect x="240" y="280" width="150" height="12" fill="#ff3366" shape-rendering="crispEdges"/>
+    <path d="M260 280 v12 M280 280 v12 M300 280 v12 M320 280 v12 M340 280 v12 M360 280 v12 M380 280 v12" stroke="#050814" stroke-width="2" shape-rendering="crispEdges"/>
+
+    <!-- MP Bar -->
+    <text x="210" y="315" class="text-cyan stat">MP</text>
+    <rect x="240" y="305" width="160" height="12" fill="#001a33" shape-rendering="crispEdges"/>
+    <rect x="240" y="305" width="130" height="12" fill="#00d9ff" shape-rendering="crispEdges"/>
+    <path d="M260 305 v12 M280 305 v12 M300 305 v12 M320 305 v12 M340 305 v12 M360 305 v12 M380 305 v12" stroke="#050814" stroke-width="2" shape-rendering="crispEdges"/>
+
+    <!-- 6. ANIMASI PARTIKEL PIXEL AURA -->
+    <g fill="#a45cff" shape-rendering="crispEdges">
+      <rect y="320" width="8" height="8" class="particle p1" />
+      <rect y="320" width="6" height="6" class="particle p2" />
+      <rect y="320" width="10" height="10" class="particle p3" />
+      <rect y="320" width="5" height="5" class="particle p4" />
+      <rect y="320" width="8" height="8" class="particle p5" />
+      <rect y="320" width="7" height="7" class="particle p6" />
+    </g>
+  </g>
+</svg>
