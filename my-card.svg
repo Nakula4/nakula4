@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="850" height="485">
   <defs>
-    <!-- Efek Glow untuk Jendela Sistem & Mata -->
+    <!-- Efek Glow untuk Jendela Sistem dan Mata -->
     <filter id="neon-glow" x="-30%" y="-30%" width="160%" height="160%">
       <feGaussianBlur stdDeviation="4" result="blur" />
       <feMerge>
@@ -23,7 +23,7 @@
   </defs>
 
   <style>
-    /* Styling Dasar & Colors */
+    /* Styling Dasar dan Colors */
     .bg-dark { fill: #050814; }
     .sys-window { 
       fill: rgba(0, 15, 30, 0.9); 
@@ -96,7 +96,7 @@
   <!-- Grup Kartu Melayang -->
   <g class="card-group">
     
-    <!-- 1. BORDER SISTEM UTAMA (Diperbesar) -->
+    <!-- 1. BORDER SISTEM UTAMA -->
     <rect x="50" y="50" width="600" height="300" class="sys-window" shape-rendering="crispEdges" />
     <rect x="55" y="55" width="590" height="290" class="sys-inner-border" shape-rendering="crispEdges" />
     
@@ -110,7 +110,7 @@
     <text x="80" y="95" class="text-cyan title">STATUS WINDOW <tspan class="text-white cursor">_</tspan></text>
     <rect x="80" y="105" width="540" height="2" fill="#005577" shape-rendering="crispEdges"/>
 
-    <!-- 3. BAGIAN FOTO PIXEL AVATAR (Diturunkan posisinya agar sejajar teks) -->
+    <!-- 3. BAGIAN FOTO PIXEL AVATAR -->
     <g transform="translate(70, 130)">
       <rect x="0" y="0" width="120" height="120" class="photo-frame" shape-rendering="crispEdges" />
       
@@ -144,8 +144,7 @@
       <rect x="0" y="0" width="10" height="10" fill="#00d9ff" shape-rendering="crispEdges"/>
     </g>
 
-    <!-- 4. BAGIAN TEKS STATUS (Menggunakan kordinat x absolut untuk setiap kolom) -->
-    <!-- Kolom Label di x=210, Titik Dua di x=330, Nilai di x=345 -->
+    <!-- 4. BAGIAN TEKS STATUS -->
     <text y="135" class="stat text-cyan">
       <tspan x="210">NAME</tspan>
       <tspan x="330">:</tspan>
@@ -182,7 +181,7 @@
       <tspan x="345" class="text-white">FLUTTER APPS &amp; EXPENSE TRACKER</tspan>
     </text>
 
-    <!-- 5. HEALTH & MANA BAR (Diturunkan posisinya) -->
+    <!-- 5. HEALTH dan MANA BAR -->
     <!-- HP Bar -->
     <text x="210" y="290" class="text-red stat">HP</text>
     <rect x="240" y="280" width="160" height="12" fill="#330011" shape-rendering="crispEdges"/>
